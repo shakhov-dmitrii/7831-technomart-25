@@ -1,7 +1,7 @@
 # Личный проект «Техномарт»
 
 * Студент: [Дмитрий Шахов](https://up.htmlacademy.ru/htmlcss/25/user/7831).
-* Наставник: `Сергей Артёмов`.
+* Наставник: [Сергей Артёмов](https://htmlacademy.ru/profile/firefoxic).
 
 ---
 
