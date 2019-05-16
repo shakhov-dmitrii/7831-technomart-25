@@ -11,7 +11,10 @@
     <nav class="main-navigation">
       <a class="main-header-logo" href="index.html"><img src="img/logo-technomart.svg" alt="Техномарт" width="220"
           height="47"></a>
-      <!-- Тут будет поиск -->
+      <form class="search-form" action="https://echo.htmlacademy.ru" method="post">
+        <label class="visually-hidden" for="search-field">Поле поиска</label>
+        <input id="search-field" type="text" name="search-request" placeholder="Поиск:">
+      </form>
       <a href="#">Закладки: 0</a>
       <a href="#">Корзина: 10</a>
       <a href="#">Оформить заказ</a>
@@ -49,7 +52,48 @@
     </ul>
     <section class="filters">
       <h2 class="visually-hidden">Фильтр товаров</h2>
-      <!-- Здесь будет форма -->
+      <!-- Здесь будет ползунок -->
+      <form class="filters" action="https://echo.htmlacademy.ru" method="get">
+        <fieldset>
+          <legend>Производители:</legend>
+          <ul>
+            <li>
+              <input id="filter-bosch" type="checkbox" name="bosch" checked>
+              <label for="filter-bosch">BOSCH</label>
+            </li>
+            <li>
+              <input id="filter-interskol" type="checkbox" name="interskol">
+              <label for="filter-interskol">Интерскол</label>
+            </li>
+            <li>
+              <input id="filter-makita" type="checkbox" name="makita" checked>
+              <label for="filter-makita">Makita</label>
+            </li>
+            <li>
+              <input id="filter-dewalt" type="checkbox" name="dewalt">
+              <label for="filter-dewalt">Dewalt</label>
+            </li>
+            <li>
+              <input id="filter-hitachi" type="checkbox" name="hitachi">
+              <label for="">Hitachi</label>
+            </li>
+          </ul>
+        </fieldset>
+        <fieldset>
+          <legend>Питание:</legend>
+          <ul>
+            <li>
+              <input id="filter-accumulator" type="radio" name="power-supply" value="accumulator" checked>
+              <label for="filter-accumulator">Аккумуляторные</label>
+            </li>
+            <li>
+              <input id="filter-electronetwork" type="radio" name="power-supply" value="electronetwork">
+              <label for="filter-electronetwork">Сетевые</label>
+            </li>
+          </ul>
+        </fieldset>
+        <button type="submit">Показать</button>
+      </form>
     </section>
     <section class="catalog-sort">
       <h2 class="visually-hidden">Сортировка:</h2>
@@ -220,8 +264,8 @@
   <div class="modal modal-cart">
     <p>Товар добавлен в корзину!</p>
     <a class="button" href="">Оформить заказ</a>
-    <span class="button button-white">Продолжить покупки</span>
-    <span class="modal-close">x</span>
+    <button class="button button-white">Продолжить покупки</button>
+    <button class="modal-close" aria-label="Закрыть модальное окно"></button>
   </div>
 </body>
 
