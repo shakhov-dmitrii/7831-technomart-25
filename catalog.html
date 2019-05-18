@@ -52,8 +52,21 @@
     </ul>
     <section class="filters">
       <h2 class="visually-hidden">Фильтр товаров</h2>
-      <!-- Здесь будет ползунок -->
       <form class="filters" action="https://echo.htmlacademy.ru" method="get">
+        <fieldset>
+          <legend>Цена:</legend>
+          <p>
+            <input id="filter-price-range" type="range" name="price-range">
+            <label class="visually-hidden" for="filter-price-range">Диапазон цен</label>
+          </p>
+          <p>
+            <label class="visually-hidden" for="filter-min-price">Минимальная цена</label>
+            <input id="filter-min-price" type="number" name="min-price">
+            —
+            <label class="visually-hidden" for="filter-max-price">Максимальная цена</label>
+            <input id="filter-max-price" type="number" name="max-price">
+          </p>
+        </fieldset>
         <fieldset>
           <legend>Производители:</legend>
           <ul>
