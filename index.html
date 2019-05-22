@@ -14,14 +14,14 @@
 <body>
   <header class="main-header">
     <nav class="main-navigation">
-      <a class="main-header-logo"><img src="img/logo-technomart.svg" alt="Техномарт" width="220" height="47"></a>
+      <a class="logo main-header-logo"><img src="img/logo-technomart.svg" alt="Техномарт" width="220" height="47"></a>
       <form class="search-form" action="https://echo.htmlacademy.ru" method="post">
         <label class="visually-hidden" for="search-field">Поле поиска</label>
         <input id="search-field" type="text" name="search-request" placeholder="Поиск:">
       </form>
       <a href="#">Закладки: 0</a>
       <a href="#">Корзина: 0</a>
-      <a href="#">Оформить заказ</a>
+      <a class="button-green" href="#">Оформить заказ</a>
     </nav>
     <div class="header-content">
       <h1 class="header-description">Интернет-магазин строительных материалов и инструментов для ремонта</h1>
@@ -101,7 +101,7 @@
             <a class="button goods-button" href="#">25500 Р.</a>
           </p>
           <div class="item-cover">
-            <a class="button add-to-cart-button" href="#">Купить</a>
+            <a class="button button-green" href="#">Купить</a>
             <button class="button add-to-favorite">В закладки</button>
           </div>
         </li>
@@ -118,7 +118,7 @@
             <a class="button goods-button" href="">15500 Р.</a>
           </p>
           <div class="item-cover">
-            <a class="button add-to-cart-button" href="#">Купить</a>
+            <a class="button button-green" href="#">Купить</a>
             <button class="button add-to-favorite">В закладки</button>
           </div>
         </li>
@@ -135,14 +135,14 @@
             <a class="button goods-button" href="">25500 Р.</a>
           </p>
           <div class="item-cover">
-            <a class="button add-to-cart-button" href="#">Купить</a>
+            <a class="button button-green" href="#">Купить</a>
             <button class="button add-to-favorite">В закладки</button>
           </div>
         </li>
         <li class="popular-goods-item">
           <h3>
             <a href="#">
-              <a class="button add-to-cart-button" href="#">Купить</a>
+              <a class="button button-green" href="#">Купить</a>
               <span class="item-title">BFG 2000</span>
             </a>
           </h3>
@@ -152,7 +152,7 @@
             <a class="button goods-button" href="">12500 Р.</a>
           </p>
           <div class="item-cover">
-            <button class="button add-to-cart-button">Купить</button>
+            <button class="button button-green">Купить</button>
             <button class="button add-to-favorite">В закладки</button>
           </div>
         </li>
@@ -198,18 +198,18 @@
           <li class="services-item"><a href="#second-tab">Гарантия</a></li>
           <li class="services-item"><a href="#third-tab">Кредит</a></li>
         </ul>
-        <section class="services-info services-info-current" id="first-tab">
+        <section class="services-info delivery services-info-current" id="first-tab">
           <h3>Доставка</h3>
           <p>Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно! Ведь мы неплохо
             заработаем, поднимая его на ваш этаж!</p>
         </section>
-        <section class="services-info" id="second-tab">
+        <section class="services-info guarantee" id="second-tab">
           <h3>Гарантия</h3>
           <p>Если купленный у нас товар поломается или заискрит, а также в случае пожара, спровоцированного его
             возгаранием, вы всегда можете быть уверены в нашей гарантии. Мы обменяем сгоревший товар на новый. Дом уж
             восстановите как-нибудь сами.</p>
         </section>
-        <section class="services-info" id="third-tab">
+        <section class="services-info credit" id="third-tab">
           <h3>Кредит</h3>
           <p>Залезть в долговую яму стало проще! Кредитные консультанты придут вам на помощь.</p>
         </section>
@@ -249,14 +249,14 @@
             <label for="user-comment">Текст письма:</label>
             <textarea id="user-comment" name="comment" cols="30" rows="10" placeholder="В свободной форме"></textarea>
           </p>
-          <button type="submit">Отправить</button>
+          <button class="button" type="submit">Отправить</button>
         </form>
         <button class="modal-close">Закрыть модальное окно</button>
       </section>
     </section>
   </main>
   <footer class="main-footer">
-    <a class="main-footer-logo"><img src="img/logo-technomart.svg" alt="Техномарт" width="220" height="68"></a>
+    <a class="logo main-footer-logo"><img src="img/logo-technomart.svg" alt="Техномарт" width="220" height="68"></a>
     <ul class="main-footer-navigation">
       <li><a href="company.html">Компания</a></li>
       <li><a href="news.html">Новости</a></li>
@@ -293,11 +293,10 @@
       </p>
     </div>
   </footer>
-  <section class="modal modal-map" hidden>
-    <h2 class="visually-hidden">Как добраться до офиса</h2>
+  <div class="modal modal-map" hidden>
     <img src="img/big-map.png" alt="г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8" width="940" height="447">
     <button class="modal-close">Закрыть модальное окно</button>
-  </section>
+  </div>
 </body>
 
 </html>

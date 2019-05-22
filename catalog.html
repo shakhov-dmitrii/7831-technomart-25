@@ -14,15 +14,15 @@
 <body>
   <header class="main-header">
     <nav class="main-navigation">
-      <a class="main-header-logo" href="index.html"><img src="img/logo-technomart.svg" alt="Техномарт" width="220"
+      <a class="logo main-header-logo" href="index.html"><img src="img/logo-technomart.svg" alt="Техномарт" width="220"
           height="47"></a>
       <form class="search-form" action="https://echo.htmlacademy.ru" method="post">
         <label class="visually-hidden" for="search-field">Поле поиска</label>
         <input id="search-field" type="text" name="search-request" placeholder="Поиск:">
       </form>
       <a href="#">Закладки: 0</a>
-      <a href="#">Корзина: 10</a>
-      <a href="#">Оформить заказ</a>
+      <a class="button" href="#">Корзина: 10</a>
+      <a class="button-green" href="#">Оформить заказ</a>
     </nav>
     <div class="header-content">
       <p class="header-description">Интернет-магазин строительных материалов и инструментов для ремонта</p>
@@ -142,7 +142,7 @@
             <a class="button goods-button" href="">15500 Р.</a>
           </p>
           <div class="item-cover">
-            <a class="button add-to-cart-button" href="#">Купить</a>
+            <a class="button button-green" href="#">Купить</a>
             <button class="button add-to-favorite">В закладки</button>
           </div>
         </li>
@@ -159,7 +159,7 @@
             <a class="button goods-button" href="">25500 Р.</a>
           </p>
           <div class="item-cover">
-            <a class="button add-to-cart-button" href="#">Купить</a>
+            <a class="button button-green" href="#">Купить</a>
             <button class="button add-to-favorite">В закладки</button>
           </div>
         </li>
@@ -176,7 +176,7 @@
             <a class="button goods-button" href="">12500 Р.</a>
           </p>
           <div class="item-cover">
-            <a class="button add-to-cart-button" href="#">Купить</a>
+            <a class="button button-green" href="#">Купить</a>
             <button class="button add-to-favorite">В закладки</button>
           </div>
         </li>
@@ -193,7 +193,7 @@
             <a class="button goods-button" href="">15500 Р.</a>
           </p>
           <div class="item-cover">
-            <a class="button add-to-cart-button" href="#">Купить</a>
+            <a class="button button-green" href="#">Купить</a>
             <button class="button add-to-favorite">В закладки</button>
           </div>
         </li>
@@ -211,7 +211,7 @@
             <a class="button goods-button" href="">25500 Р.</a>
           </p>
           <div class="item-cover">
-            <a class="button add-to-cart-button" href="#">Купить</a>
+            <a class="button button-green" href="#">Купить</a>
             <button class="button add-to-favorite">В закладки</button>
           </div>
         </li>
@@ -227,7 +227,7 @@
             <a class="button goods-button" href="">12500 Р.</a>
           </p>
           <div class="item-cover">
-            <a class="button add-to-cart-button" href="#">Купить</a>
+            <a class="button button-green" href="#">Купить</a>
             <button class="button add-to-favorite">В закладки</button>
           </div>
         </li>
@@ -245,7 +245,7 @@
             <a class="button goods-button" href="">15500 Р.</a>
           </p>
           <div class="item-cover">
-            <a class="button add-to-cart-button" href="#">Купить</a>
+            <a class="button button-green" href="#">Купить</a>
             <button class="button add-to-favorite">В закладки</button>
           </div>
         </li>
@@ -262,7 +262,7 @@
             <a class="button goods-button" href="">25500 Р.</a>
           </p>
           <div class="item-cover">
-            <a class="button add-to-cart-button" href="#">Купить</a>
+            <a class="button button-green" href="#">Купить</a>
             <button class="button add-to-favorite">В закладки</button>
           </div>
         </li>
@@ -278,7 +278,7 @@
             <a class="button goods-button" href="">12500 Р.</a>
           </p>
           <div class="item-cover">
-            <a class="button add-to-cart-button" href="#">Купить</a>
+            <a class="button button-green" href="#">Купить</a>
             <button class="button add-to-favorite">В закладки</button>
           </div>
         </li>
@@ -300,7 +300,7 @@
     </section>
   </main>
   <footer class="main-footer">
-    <a class="main-footer-logo" href="index.html"><img src="img/logo-technomart.svg" alt="Техномарт" width="220"
+    <a class="logo main-footer-logo" href="index.html"><img src="img/logo-technomart.svg" alt="Техномарт" width="220"
         height="68"></a>
     <ul class="main-footer-navigation">
       <li><a href="company.html">Компания</a></li>
@@ -319,7 +319,7 @@
       <li><a href="catalog.html">Инструмент</a></li>
       <li><a href="catalog.html">Спецпредложения</a></li>
     </ul>
-  </footer>
+
   <div class="main-footer-bottom">
     <p class="footer-copyright">
       © 2010–2019 Компания «Техномарт» Все права защищены
@@ -338,12 +338,12 @@
       <a href="htmlacademy.ru">htmlacademy.ru</a>
     </p>
   </div>
-  <section class="modal modal-cart" hidden>
-    <h2>Товар добавлен в корзину!</h2>
+</footer>
+  <div class="modal modal-cart" hidden>
     <a class="button" href="">Оформить заказ</a>
     <button class="button button-white">Продолжить покупки</button>
     <button class="modal-close">Закрыть модальное окно</button>
-  </section>
+  </div>
 </body>
 
 </html>

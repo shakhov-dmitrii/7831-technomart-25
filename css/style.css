@@ -14,6 +14,11 @@ a {
   text-decoration: none;
 }
 
+.logo {
+  background-color: #ee3643;
+  box-shadow: inset 0 -5px 0 rgba(0, 0, 0, 0.24);
+}
+
 .main-header {
   font-family: "Cuprum", "Arial", sans-serif;
   font-size: 17px;
@@ -48,7 +53,7 @@ a {
 
 .header-content {
   background-color: #f3f7f8;
-  background-image: url("./../img/background.png");
+  background-image: url("/img/background.png");
 }
 
 .header-description {
@@ -112,18 +117,18 @@ a {
   background-color: #ba2732;
 }
 
-.add-to-cart-button {
+.button-green {
   background-color: #63a63e;
   box-shadow: inset 0 -3px 0 #367315;
 }
 
-.add-to-cart-button:hover,
-.add-to-cart-button:focus {
+.button-green:hover,
+.button-green:focus {
   background-color: #5fbb2d;
   box-shadow: inset 0 -3px 0 #367315;
 }
 
-.add-to-cart-button:active {
+.button-green:active {
   background-color: #518534;
 }
 
@@ -151,17 +156,18 @@ a {
 }
 
 .pagination-item a {
-  border-right: 1px solid #e5e5e5;
+  color: #000000;
+  border: 1px solid #e5e5e5;
 }
 
 .pagination-item a:hover,
 .pagination-item a:focus {
-  border-right: 1px solid #bdc6ca;
+  border: 1px solid #bdc6ca;
 }
 
 .pagination-item a:active {
   color: #000000;
-  border-right: 1px solid #ee3643;
+  border: 1px solid #ee3643;
 }
 
 .pagination-item-current a {
@@ -172,7 +178,7 @@ a {
 .container h1 {
   color: #32425c;
   background-color: #f3f7f8;
-  background-image: url("./../img/background.png");
+  background-image: url("/img/background.png");
 }
 
 .container h1,
@@ -182,15 +188,96 @@ a {
   text-transform: uppercase;
 }
 
-.catalog-item {
-  list-style: none;
+.popular h2 {
+  background-color: #f9f5f0;
 }
 
+.popular-goods-item,
+.catalog-item {
+  list-style: none;
+  border: 1px solid #e5e5e5;
+}
+
+.popular-goods-item h3 a,
 .catalog-item h3 a {
   font-size: 18px;
   font-weight: 700;
   line-height: 20px;
   color: #000000;
+}
+
+.popular-goods-item del,
+.catalog-item del {
+  font-size: 17px;
+  font-weight: 700;
+  color: #999999;
+  text-transform: uppercase;
+}
+
+.popular-goods-item .goods-button,
+.catalog-item .goods-button {
+  font-size: 17px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.popular-brands-item {
+  list-style: none;
+  border: 1px solid #eaeaea;
+}
+
+.services {
+  background-color: #f3f7f8;
+  background-image: url("/img/background.png");
+}
+
+.services-list {
+  list-style: none;
+}
+
+.services-item a {
+  font-family: "Cuprum", "Arial", sans-serif;
+  font-size: 21px;
+  font-weight: 700;
+  color: #ffffff;
+  background-color: #32425c;
+  box-shadow: 0 1px 0 #293449, inset 0 1px 0 #405069;
+}
+
+.services-item a:focus,
+.services-item a:hover {
+  color: #ffffff;
+  background-color: #293449;
+}
+
+.services-item a:active,
+.services-item-current a {
+  color: #32425c;
+  background-color: #ffffff;
+  box-shadow: 0 1px 0 #ffffff, inset 0 1px 0 #ffffff;
+}
+
+
+.services-info h3 {
+  font-family: "Cuprum", "Arial", sans-serif;
+  font-size: 36px;
+  color: #32425c;
+  text-transform: uppercase;
+}
+
+.services-info.delivery {
+  background-image: url("/img/delivery.png");
+  background-repeat: no-repeat;
+}
+
+.services-info.guarantee {
+  background-image: url("/img/guarantee.png");
+  background-repeat: no-repeat;
+}
+
+.services-info.credit {
+  background-image: url("/img/credit.png");
+  background-repeat: no-repeat;
 }
 
 .company-list {
@@ -244,3 +331,28 @@ a {
   text-decoration: none;
 }
 
+.modal {
+  box-shadow: 0 20px 40px rgba(0, 1, 1, 0.75);
+}
+
+.modal-write-us label {
+  font-family: "Cuprum", "Arial", sans-serif;
+  font-size: 18px;
+}
+
+.write-us-form input,
+.write-us-form textarea {
+  font: inherit;
+  border: 2px solid #dee3e4;
+}
+
+.write-us-form input:hover,
+.write-us-form textarea:hover {
+  border: 2px solid #b5b5b5;
+}
+
+.write-us-form input:focus,
+.write-us-form textarea:focus {
+  color: #000000;
+  border: 2px solid #ee3643;
+}
