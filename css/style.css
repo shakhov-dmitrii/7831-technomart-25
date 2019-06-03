@@ -271,7 +271,6 @@ input[type="radio"].visually-hidden {
 
 .user-navigation {
   width: 150px;
-  text-align: right;
 }
 
 .user-navigation .signin,
@@ -325,16 +324,19 @@ input[type="radio"].visually-hidden {
   color: rgba(0, 0, 0, 0.3);
 }
 
+.user-navigation .row-wrapper {
+  align-items: flex-end;
+}
+
 .user-navigation .profile {
-  display: block;
   position: relative;
   padding-top: 11px;
   padding-bottom: 11px;
-  padding-left: 4px;
-  padding-right: 25px;
+  padding-left: 24px;
   text-align: center;
   background-image: none;
   background-color: #ffffff;
+  flex-grow: 1;
 }
 
 .user-navigation .profile::before {
@@ -357,23 +359,22 @@ input[type="radio"].visually-hidden {
   background-image: url("../img/icon-user.svg");
 }
 
-.user-navigation .profile::after {
-  content: "";
-  position: absolute;
-  right: 12px;
-  top: 13px;
-  width: 20px;
-  height: 17px;
+.user-navigation .logout {
+  width: 45px;
+  height: 45px;
+  background-color: #ffffff;
   background-repeat: no-repeat;
   background-image: url("../img/icon-logout.svg");
+  background-position-x: 12px;
+  background-position-y: 13px;
 }
 
-.user-navigation .profile:hover::after,
-.user-navigation .profile:active::after {
+.user-navigation .logout:hover,
+.user-navigation .logout:active {
   background-image: url("../img/icon-logout-focus.svg");
 }
 
-.user-navigation .profile:active::after {
+.user-navigation .logout:active {
   background-image: url("../img/icon-logout.svg");
 }
 
@@ -1052,12 +1053,10 @@ input[type="radio"].visually-hidden {
   right: 0;
   width: 10px;
   height: 268px;
-  /* width: 25px;
-  height: 2px; */
   background-image: url("../img/services-border.png");
 }
 
-.services-item label {
+.services-item a {
   display: block;
   width: 240px;
   padding-top: 15px;
@@ -1073,15 +1072,15 @@ input[type="radio"].visually-hidden {
   cursor: pointer;
 }
 
-.services-item label:focus,
-.services-item label:hover {
+.services-item a:focus,
+.services-item a:hover {
   color: #ffffff;
   background-color: #293449;
 }
 
-#delivery-service:checked ~ .row-wrapper label[for="delivery-service"],
-#guarantee-service:checked ~ .row-wrapper label[for="guarantee-service"],
-#credit-service:checked ~ .row-wrapper label[for="credit-service"] {
+.services-item .active,
+.services-item .active:hover,
+.services-item .active:focus {
   color: #32425c;
   background-color: #ffffff;
   box-shadow: 0 1px 0 #ffffff, inset 0 1px 0 #ffffff;
@@ -1129,9 +1128,7 @@ input[type="radio"].visually-hidden {
   background-position-y: 30px;
 }
 
-#delivery-service:checked ~ .row-wrapper #first-tab,
-#guarantee-service:checked ~ .row-wrapper #second-tab,
-#credit-service:checked ~ .row-wrapper #third-tab {
+.services-info.active {
   display: block;
 }
 
