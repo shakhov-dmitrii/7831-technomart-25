@@ -68,6 +68,7 @@ var formValidate = function (modal) {
 var closePopup = function () {
   var closePopup = document.querySelector(".modal-show .modal-close");
   var popup = document.querySelector(".modal-show");
+
   closePopup.addEventListener("click", function (evt) {
     evt.preventDefault();
     popup.classList.remove("modal-error");
@@ -81,6 +82,15 @@ var closePopup = function () {
       popup.classList.remove("modal-show");
     }
   });
+
+  if (popup === cartPopup) {
+    var returnToShopping = document.querySelector(".modal-cart .button-white");
+
+    returnToShopping.addEventListener("click", function(evt) {
+      evt.preventDefault();
+      popup.classList.remove("modal-show");
+    });
+  }
 };
 
 if (writeUs) {
