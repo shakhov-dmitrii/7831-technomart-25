@@ -920,6 +920,10 @@ input[type="radio"].visually-hidden {
   padding-left: 0;
 }
 
+.catalog-list {
+  width: 700px;
+}
+
 .popular-goods-item:nth-child(4n),
 .catalog-item:nth-child(3n) {
   margin-right: 0;
