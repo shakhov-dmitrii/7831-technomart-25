@@ -173,10 +173,10 @@ if (scale) {
   var scaleStart = getLeftSide(scale);
 
   toggleMin.onmousedown = function (evt) {
-    var shiftX = evt.pageX - getLeftSide(toggleMin);
+    var shiftX = - (evt.clientX - getLeftSide(toggleMin));
 
     document.onmousemove = function (evt) {
-      var newPosition = evt.pageX - shiftX - scaleStart / 2;
+      var newPosition = evt.clientX + shiftX - scaleStart + 20;
       if (newPosition < MIN_OFFSET) {
         newPosition = MIN_OFFSET;
       }
@@ -220,10 +220,10 @@ if (scale) {
   });
 
   toggleMax.onmousedown = function (evt) {
-    var shiftX = evt.pageX - getLeftSide(toggleMax);
+    var shiftX = - (evt.clientX - getLeftSide(toggleMax));
 
     document.onmousemove = function (evt) {
-      var newPosition = evt.pageX - shiftX - scaleStart / 2;
+      var newPosition = evt.clientX + shiftX - scaleStart + 20;
       if (newPosition < min + toggleMin.offsetWidth / 2) {
         newPosition = min + toggleMin.offsetWidth / 2;
       }
