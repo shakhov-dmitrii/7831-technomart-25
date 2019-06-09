@@ -77,8 +77,8 @@
         </div>
         <div class="offers-slider">
           <div class="slider-controls">
-            <i class="active"></i>
-            <i></i>
+            <i class="active" onclick="showSlides(0)"></i>
+            <i onclick="showSlides(1)"></i>
           </div>
           <section class="offers-slide slide-1 active">
             <h3>Дрели</h3>
@@ -90,8 +90,8 @@
             <p>Настоящие мужские игрушки</p>
             <a class="button" href="catalog.html">Открыть каталог</a>
           </section>
-          <button class="previous-slide" type="submit"><span class="visually-hidden">Предыдущий слайд</span></button>
-          <button class="next-slide" type="submit"><span class="visually-hidden">Следующий слайд</span></button>
+          <button class="previous-slide" type="submit" onclick="previousSlide()"><span class="visually-hidden">Предыдущий слайд</span></button>
+          <button class="next-slide" type="submit" onclick="nextSlide()"><span class="visually-hidden">Следующий слайд</span></button>
         </div>
       </div>
 

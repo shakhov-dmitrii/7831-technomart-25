@@ -19,6 +19,10 @@ var storageEmail = "";
 var tabsLink = document.querySelectorAll('.services-item a');
 var currentTab = document.querySelector('.services-item .active');
 
+var currentSlide = 0;
+var slides = document.querySelectorAll(".offers-slider section");
+var radio = document.querySelectorAll(".slider-controls i");
+
 try {
   storageName = localStorage.getItem("name");
   storageEmail = localStorage.getItem("email");
@@ -86,7 +90,7 @@ var closePopup = function () {
   if (popup === cartPopup) {
     var returnToShopping = document.querySelector(".modal-cart .button-white");
 
-    returnToShopping.addEventListener("click", function(evt) {
+    returnToShopping.addEventListener("click", function (evt) {
       evt.preventDefault();
       popup.classList.remove("modal-show");
     });
@@ -117,4 +121,31 @@ if (addToCartButtons) {
   addToCartButtons.forEach(function (button) {
     openModal(button, cartPopup);
   });
+}
+
+if (slides) {
+  var nextSlide = function () {
+    var next = currentSlide + 1;
+    showSlides(next);
+  };
+
+  var previousSlide = function () {
+    var previous = currentSlide - 1;
+    showSlides(previous);
+  };
+
+  var showSlides = function (number) {
+    if (number > slides.length - 1) {
+      number = 0;
+    } else if (number < 0) {
+      number = slides.length - 1;
+    } else if (number === currentSlide) {
+      return;
+    }
+    slides[number].classList.add("active");
+    slides[currentSlide].classList.remove("active");
+    radio[number].classList.add("active");
+    radio[currentSlide].classList.remove("active");
+    currentSlide = number;
+  };
 }
