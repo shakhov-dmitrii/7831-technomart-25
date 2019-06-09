@@ -1481,6 +1481,7 @@ input[type="radio"].visually-hidden {
 }
 
 .range-control .bar {
+  position: absolute;
   width: 70%;
   height: 2px;
   background-color: #00ca74;
@@ -1506,7 +1507,7 @@ input[type="radio"].visually-hidden {
 }
 
 .range-control .toggle-max {
-  left: 140px;
+  left: 165px;
 }
 
 .price-controls {

@@ -1,27 +1,29 @@
 var writeUsPopup = document.querySelector(".modal-write-us");
 var mapPopup = document.querySelector(".modal-map");
-var cartPopup = document.querySelector('.modal-cart');
+var cartPopup = document.querySelector(".modal-cart");
 
-var writeUs = document.querySelector('.contacts .button');
-var form = document.querySelector('.modal-write-us form');
-var nameField = document.querySelector('#user-name');
-var emailField = document.querySelector('#user-email');
-var commentField = document.querySelector('#user-comment');
+var writeUs = document.querySelector(".contacts .button");
+var form = document.querySelector(".modal-write-us form");
+var nameField = document.querySelector("#user-name");
+var emailField = document.querySelector("#user-email");
+var commentField = document.querySelector("#user-comment");
 
-var map = document.querySelector('.contacts a:first-of-type');
+var map = document.querySelector(".contacts a:first-of-type");
 
-var addToCartButtons = document.querySelectorAll('.item-cover a');
+var addToCartButtons = document.querySelectorAll(".item-cover a");
 
 var isStorageSupport = true;
 var storageName = "";
 var storageEmail = "";
 
-var tabsLink = document.querySelectorAll('.services-item a');
-var currentTab = document.querySelector('.services-item .active');
+var tabsLink = document.querySelectorAll(".services-item a");
+var currentTab = document.querySelector(".services-item .active");
 
 var currentSlide = 0;
 var slides = document.querySelectorAll(".offers-slider section");
 var radio = document.querySelectorAll(".slider-controls i");
+
+var scale = document.querySelector(".range-filter .scale");
 
 try {
   storageName = localStorage.getItem("name");
@@ -108,9 +110,9 @@ if (map) {
 if (tabsLink) {
   tabsLink.forEach(function (elem) {
     elem.addEventListener("click", function (evt) {
-      elem.classList.add('active');
+      elem.classList.add("active");
       if (currentTab !== elem) {
-        currentTab.classList.remove('active');
+        currentTab.classList.remove("active");
         currentTab = elem;
       }
     });
@@ -148,4 +150,115 @@ if (slides) {
     radio[currentSlide].classList.remove("active");
     currentSlide = number;
   };
+}
+
+if (scale) {
+  var MIN_OFFSET = 18;
+
+  var bar = document.querySelector(".range-filter .bar");
+  var toggleMin = document.querySelector(".range-filter .toggle-min");
+  var toggleMax = document.querySelector(".range-filter .toggle-max");
+  var minInput = document.querySelector("#filter-min-price");
+  var maxInput = document.querySelector("#filter-max-price")
+
+  var rangeEnd = scale.offsetWidth;
+  var min = parseInt(getComputedStyle(toggleMin).left);
+  var max = parseInt(getComputedStyle(toggleMax).left);
+
+  var getLeftSide = function(elem) {
+    var box = elem.getBoundingClientRect();
+    return box.left;
+  };
+
+  var scaleStart = getLeftSide(scale);
+
+  toggleMin.onmousedown = function (evt) {
+    var shiftX = evt.pageX - getLeftSide(toggleMin);
+
+    document.onmousemove = function (evt) {
+      var newPosition = evt.pageX - shiftX - scaleStart / 2;
+      if (newPosition < MIN_OFFSET) {
+        newPosition = MIN_OFFSET;
+      }
+      if (newPosition > max - toggleMin.offsetWidth / 2) {
+        newPosition = max - toggleMin.offsetWidth / 2;
+      }
+      min = newPosition;
+      toggleMin.style.left = min + "px";
+      bar.style.width = max - min + "px";
+      bar.style.left = min + "px";
+      if (newPosition > MIN_OFFSET) {
+        minInput.value = (min / rangeEnd * minInput.max).toFixed();
+      } else {
+        minInput.value = 0;
+      }
+    };
+    document.onmouseup = function () {
+      document.onmousemove = document.onmouseup = null;
+    };
+  };
+
+  minInput.addEventListener("input", function (evt) {
+    var val = minInput.value;
+    var newPosition = val * rangeEnd / minInput.max;
+
+    if (newPosition > max - toggleMin.offsetWidth / 2) {
+        newPosition = max - toggleMin.offsetWidth / 2;
+    }
+
+    if ( newPosition > MIN_OFFSET) {
+      min = newPosition;
+      toggleMin.style.left = min + "px";
+      bar.style.width = max - min + "px";
+      bar.style.left = min + "px";
+    } else {
+      min = MIN_OFFSET;
+      toggleMin.style.left = min + "px";
+      bar.style.width = max - min + "px";
+      bar.style.left = min + "px";
+    }
+  });
+
+  toggleMax.onmousedown = function (evt) {
+    var shiftX = evt.pageX - getLeftSide(toggleMax);
+
+    document.onmousemove = function (evt) {
+      var newPosition = evt.pageX - shiftX - scaleStart / 2;
+      if (newPosition < min + toggleMin.offsetWidth / 2) {
+        newPosition = min + toggleMin.offsetWidth / 2;
+      }
+
+      if (newPosition > rangeEnd) {
+        newPosition = rangeEnd;
+      }
+      max = newPosition;
+
+      toggleMax.style.left = max + "px";
+      bar.style.width = max - min + "px";
+      maxInput.value = (((max) / rangeEnd) * maxInput.max).toFixed();
+    };
+
+    document.onmouseup = function () {
+      document.onmousemove = document.onmouseup = null;
+    };
+  };
+
+  maxInput.addEventListener("input", function (evt) {
+    var val = maxInput.value;
+    var newPosition = (val * rangeEnd / maxInput.max);
+
+    if (newPosition > rangeEnd) {
+        newPosition = rangeEnd;
+    }
+
+    if (newPosition - min > scaleStart) {
+      max = newPosition;
+      toggleMax.style.left = newPosition + "px";
+      bar.style.width = max - min + "px";
+    } else {
+      max = scaleStart;
+      toggleMax.style.left = max + "px";
+      bar.style.width = max - min + "px";
+    }
+  });
 }
