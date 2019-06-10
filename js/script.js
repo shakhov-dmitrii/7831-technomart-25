@@ -110,6 +110,8 @@ if (map) {
 if (tabsLink) {
   tabsLink.forEach(function (elem) {
     elem.addEventListener("click", function (evt) {
+      event.preventDefault();
+      location.hash = this.hash;
       elem.classList.add("active");
       if (currentTab !== elem) {
         currentTab.classList.remove("active");
@@ -165,7 +167,7 @@ if (scale) {
   var min = parseInt(getComputedStyle(toggleMin).left);
   var max = parseInt(getComputedStyle(toggleMax).left);
 
-  var getLeftSide = function(elem) {
+  var getLeftSide = function (elem) {
     var box = elem.getBoundingClientRect();
     return box.left;
   };
@@ -203,10 +205,10 @@ if (scale) {
     var newPosition = val * rangeEnd / minInput.max;
 
     if (newPosition > max - toggleMin.offsetWidth / 2) {
-        newPosition = max - toggleMin.offsetWidth / 2;
+      newPosition = max - toggleMin.offsetWidth / 2;
     }
 
-    if ( newPosition > MIN_OFFSET) {
+    if (newPosition > MIN_OFFSET) {
       min = newPosition;
       toggleMin.style.left = min + "px";
       bar.style.width = max - min + "px";
@@ -248,7 +250,7 @@ if (scale) {
     var newPosition = (val * rangeEnd / maxInput.max);
 
     if (newPosition > rangeEnd) {
-        newPosition = rangeEnd;
+      newPosition = rangeEnd;
     }
 
     if (newPosition - min > scaleStart) {
