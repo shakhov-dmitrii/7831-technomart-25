@@ -149,15 +149,17 @@ if (slides) {
     currentSlide = number;
   };
 
-  firstSlide.addEventListener("click", function (evt) {
-    evt.preventDefault();
-    showSlides(0);
-  });
+  if (firstSlide && secondSlide) {
+    firstSlide.addEventListener("click", function (evt) {
+      evt.preventDefault();
+      showSlides(0);
+    });
 
-  secondSlide.addEventListener("click", function (evt) {
-    evt.preventDefault();
-    showSlides(1);
-  });
+    secondSlide.addEventListener("click", function (evt) {
+      evt.preventDefault();
+      showSlides(1);
+    });
+  }
 
   var showNextSlide = function () {
     var next = currentSlide + 1;
@@ -169,15 +171,17 @@ if (slides) {
     showSlides(previous);
   };
 
-  nextSlide.addEventListener("click", function (evt) {
-    evt.preventDefault();
-    showNextSlide();
-  });
+  if (nextSlide && previousSlide) {
+    nextSlide.addEventListener("click", function (evt) {
+      evt.preventDefault();
+      showNextSlide();
+    });
 
-  previousSlide.addEventListener("click", function (evt) {
-    evt.preventDefault();
-    showPreviousSlide();
-  });
+    previousSlide.addEventListener("click", function (evt) {
+      evt.preventDefault();
+      showPreviousSlide();
+    });
+  }
 }
 
 if (scale) {
