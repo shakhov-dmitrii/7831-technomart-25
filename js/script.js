@@ -21,7 +21,7 @@ var currentTab = document.querySelector(".services-item .active");
 
 var currentSlide = 0;
 var slides = document.querySelectorAll(".offers-slider section");
-var radio = document.querySelectorAll(".slider-controls i");
+var radio = document.querySelectorAll(".slider-controls span");
 
 var scale = document.querySelector(".range-filter .scale");
 
@@ -128,15 +128,10 @@ if (addToCartButtons) {
 }
 
 if (slides) {
-  var nextSlide = function () {
-    var next = currentSlide + 1;
-    showSlides(next);
-  };
-
-  var previousSlide = function () {
-    var previous = currentSlide - 1;
-    showSlides(previous);
-  };
+  var firstSlide = document.querySelector('.slider-controls span:nth-child(1)');
+  var secondSlide = document.querySelector('.slider-controls span:nth-child(2)');
+  var nextSlide = document.querySelector('.offers-slider .next-slide');
+  var previousSlide = document.querySelector('.offers-slider .previous-slide');
 
   var showSlides = function (number) {
     if (number > slides.length - 1) {
@@ -146,12 +141,43 @@ if (slides) {
     } else if (number === currentSlide) {
       return;
     }
-    slides[number].classList.add("active");
+    i = 0;
     slides[currentSlide].classList.remove("active");
-    radio[number].classList.add("active");
+    slides[number].classList.add("active");
     radio[currentSlide].classList.remove("active");
+    radio[number].classList.add("active");
     currentSlide = number;
   };
+
+  firstSlide.addEventListener("click", function (evt) {
+    evt.preventDefault();
+    showSlides(0);
+  });
+
+  secondSlide.addEventListener("click", function (evt) {
+    evt.preventDefault();
+    showSlides(1);
+  });
+
+  var showNextSlide = function () {
+    var next = currentSlide + 1;
+    showSlides(next);
+  };
+
+  var showPreviousSlide = function () {
+    var previous = currentSlide - 1;
+    showSlides(previous);
+  };
+
+  nextSlide.addEventListener("click", function (evt) {
+    evt.preventDefault();
+    showNextSlide();
+  });
+
+  previousSlide.addEventListener("click", function (evt) {
+    evt.preventDefault();
+    showPreviousSlide();
+  });
 }
 
 if (scale) {
