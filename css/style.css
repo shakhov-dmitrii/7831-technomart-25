@@ -1076,7 +1076,7 @@ input[type="radio"].visually-hidden {
 }
 
 .offers-item .new {
-  top: 0;
+  top: -13px;
   right: 0;
 }
 
