@@ -18,6 +18,7 @@ var storageEmail = "";
 
 var tabsLink = document.querySelectorAll(".services-item a");
 var currentTab = document.querySelector(".services-item .active");
+var currentTabContent = document.querySelector(".services-info-wrapper .active");
 
 var currentSlide = 0;
 var slides = document.querySelectorAll(".offers-slider section");
@@ -112,10 +113,14 @@ if (tabsLink) {
     elem.addEventListener("click", function (evt) {
       event.preventDefault();
       location.hash = this.hash;
+      var content = document.querySelector(this.hash);
+      content.classList.add("active");
       elem.classList.add("active");
       if (currentTab !== elem) {
         currentTab.classList.remove("active");
         currentTab = elem;
+        currentTabContent.classList.remove("active");
+        currentTabContent = content;
       }
     });
   });

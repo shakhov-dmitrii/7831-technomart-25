@@ -967,25 +967,31 @@ input[type="radio"].visually-hidden {
   position: relative;
 }
 
-.popular h2 {
-  width: 910px;
-  min-height: 59px;
-  margin: 0;
-  margin-bottom: 14px;
-  padding-top: 30px;
-  padding-left: 30px;
-
-  color: #32425c;
+.popular-wrapper {
+  justify-content: space-between;
+  min-height: 37px;
+  margin-bottom: 18px;
+  padding-top: 22px;
+  padding-right: 24px;
+  padding-bottom: 28px;
+  padding-left: 28px;
 
   background-color: #f9f5f0;
 }
 
-.popular > .button {
-  position: absolute;
-  top: 23px;
-  right: 34px;
+.popular-wrapper h2 {
+  width: 610px;
+  min-height: 24px;
+  margin: 0;
+  padding-top: 8px;
 
+  color: #32425c;
+}
+
+.popular-wrapper > .button {
+  align-self: center;
   width: 253px;
+  min-height: 24px;
 }
 
 .popular-goods-list,
@@ -1202,7 +1208,7 @@ input[type="radio"].visually-hidden {
 }
 
 .popular-brands {
-  margin-bottom: 65px;
+  margin-bottom: 60px;
 }
 
 .popular-brands-list {
@@ -1307,20 +1313,18 @@ input[type="radio"].visually-hidden {
   min-height: 292px;
 }
 
-.services-info {
-  position: absolute;
-  z-index: -10;
+.services-info-wrapper .active {
+  display: block;
+}
 
+.services-info {
+  display: none;
   width: 620px;
   min-height: 280px;
   padding-top: 12px;
 
   background-color: #f3f7f8;
   background-image: url("../img/background.png");
-}
-
-.services-info:first-of-type {
-  z-index: 1;
 }
 
 .services-info h3 {
@@ -1357,10 +1361,6 @@ input[type="radio"].visually-hidden {
   background-repeat: no-repeat;
   background-position-x: 150px;
   background-position-y: 30px;
-}
-
-.services-info:target {
-  z-index: 2;
 }
 
 .about-wrapper {
